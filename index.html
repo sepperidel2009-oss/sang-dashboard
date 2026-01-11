@@ -44,15 +44,16 @@ body {
 </div>
 
 <script>
-fetch("PASTE_YOUR_API_URL_HERE")
-.then(r => r.json())
-.then(data => {
+function updateStats(data){
   document.getElementById("members").innerText = data["Department Members"];
   document.getElementById("hours").innerText = data["Monthly Hours"];
   document.getElementById("top").innerText = data["Most Active"];
   document.getElementById("tophours").innerText = data["Top Hours"];
-});
+}
 </script>
+
+<script src="PASTE_YOUR_API_URL?callback=updateStats"></script>
+
 
 </body>
 </html>
